@@ -1,0 +1,389 @@
+/* DASHBOARD EMPLOYEE-LIST */
+.dashboard .card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    
+}
+
+.dashboard .salary {
+    background-color: #67f57a;
+}
+
+.dashboard .deduction {
+    background-color: #f28588;
+}
+
+.dashboard .commission {
+    background-color: #f5ba50;
+}
+
+.dashboard .progress-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #3498db; /* Base color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+     background: conic-gradient(#4caf50 var(--rotate), #ffffff var(--rotate));
+     transition: box-shadow 0.5s ease; 
+}
+.dashboard .progress-circle:hover {
+  box-shadow: 0 0 20px rgba(52, 152, 219, 0.8); /* Glow effect */
+}
+.progress-circle:hover:before {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(52, 152, 219, 1); /* Glow effect for the text */
+    }
+
+.dashboard .progress-circle:before {
+    content: attr(data-progress) "%";
+    position: absolute;
+    color: #443f3f;
+    font-weight: bold;
+    font-size: 22px;
+    font-weight:100px;
+    transition: text-shadow 0.3s ease;
+}
+
+.dashboard .progress-circle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 1); /* Change the opacity to 1 for solid white */
+    transition: transform 0.5s ease; /* Smooth transition for the progress */
+   
+}
+
+
+
+.dashboard #deductionCard .progress-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+     background: conic-gradient(#f79c9f var(--rotate), #ffffff var(--rotate));
+    
+}
+
+.dashboard #deductionCard .progress-circle:before {
+    content: attr(data-progress) "%";
+    position: absolute;
+    color: #443f3f;
+    font-weight: bold;
+    font-size: 22px;
+    font-weight:100px;
+}
+
+.dashboard #deductionCard .progress-circle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 1); /* Change the opacity to 1 for solid white */
+    transition: transform 0.5s ease; /* Smooth transition for the progress */
+   
+}
+
+
+.dashboard #commissionCard .progress-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+     background: conic-gradient(#f3c46d var(--rotate), #ffffff var(--rotate));
+    
+}
+
+.dashboard #commissionCard .progress-circle:before {
+    content: attr(data-progress) "%";
+    position: absolute;
+    color: #443f3f;
+    font-weight: bold;
+    font-size: 22px;
+    font-weight:100px;
+}
+
+.dashboard #commissionCard .progress-circle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 1); /* Change the opacity to 1 for solid white */
+    transition: transform 0.5s ease; /* Smooth transition for the progress */
+   
+}
+
+.dashboard .amount {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px; /* Spacing for the amount */
+
+}
+
+.dashboard .label {
+    font-size: 18px;
+    margin-top: 5px;
+     color: #443f3f;
+}
+
+.dashboard .subtext {
+    font-size: 12px;
+    opacity: 0.8;
+    color: #443f3f;
+}
+  
+/*BUTTON RAINBOW*/
+
+.btns {
+    background: hsl(var(--hue), 90%, 80%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(59, 59, 59);
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    padding: 2px;
+    margin: 5px;
+    height: 50px;
+    width: 100%;
+    max-width: 12em;
+    position: relative;
+    text-transform: uppercase;
+    font: 600 1.05rem/1 "Nunito", sans-serif;
+    box-shadow: 1px 2px 6px #1e0e3e;
+    justify-content: space-between; /* Space buttons evenly */
+    align-items: center; /* Center buttons vertically */
+    
+
+  }
+  .btns--yellow {
+    --hue: 39;
+  }
+   .btns--green {
+    --hue: 128;
+  }
+  .btns--purple {
+    --hue: 244;
+  }
+  .btns--red {
+    --hue: 0;
+  }
+  .btns--blue {
+    --hue: 210;
+  }
+  .btns:active, .btns:focus {
+    outline: 3px solid hsl(calc(var(--hue) + 90), 98%, 80%);
+  }
+  .btns + .btns {
+    margin-top: 2.5em;
+  }
+  .btns__txt {
+    position: relative;
+    z-index: 2;
+  }
+   .btns__bg {
+    background: hsl(var(--hueBg), 98%, 80%);
+    border-radius: 50%;
+    display: block;
+    height: 0;
+    left: 50%;
+    margin: -50% 0 0 -50%;
+    padding-top: 100%;
+    position: absolute;
+  
+    width: 100%;
+    transform: scale(0);
+    transform-origin: 50% 50%;
+    transition: transform 0.175s cubic-bezier(0.5, 1, 0.89, 1);
+    z-index: 1;
+    overflow: hidden;
+  }
+  .btns__bg:nth-of-type(1) {
+    --hueBg: calc(var(--hue) - 90);
+    transition-delay: 0.1725s;
+  }
+  .btns__bg:nth-of-type(2) {
+    --hueBg: calc(var(--hue) - 180);
+    transition-delay: 0.115s;
+  }
+  .btns__bg:nth-of-type(3) {
+    --hueBg: calc(var(--hue) - 270);
+    transition-delay: 0.0575s;
+  }
+  .btns__bg:nth-of-type(4) {
+    --hueBg: calc(var(--hue) - 360);
+    transition-delay: 0s;
+  }
+  .btns:hover .btns__bg, .btns:focus .btns__bg, .btns:active .btns__bg {
+    transform: scale(1.5);
+    transition: transform 0.35s cubic-bezier(0.11, 0, 0.5, 0);
+  }
+  .btns:hover .btns__bg:nth-of-type(1), .btns:focus .btns__bg:nth-of-type(1), .btns:active .btns__bg:nth-of-type(1) {
+    transition-delay: 0.115s;
+  }
+  .btns:hover .btns__bg:nth-of-type(2), .btns:focus .btns__bg:nth-of-type(2), .btns:active .btns__bg:nth-of-type(2) {
+    transition-delay: 0.23s;
+  }
+  .btns:hover .btns__bg:nth-of-type(3), .btns:focus .btns__bg:nth-of-type(3), .btns:active .btns__bg:nth-of-type(3) {
+    transition-delay: 0.345s;
+  }
+  .btns:hover .btns__bg:nth-of-type(4), .btns:focus .btns__bg:nth-of-type(4), .btns:active .btns__bg:nth-of-type(4) {
+    transition-delay: 0.46s;
+  }
+
+  /*MODAL FOR TOTAL SALARIES THIS MONTH*/
+  #commissionModal .modal,  #deductionModal .modal, #salariesModal .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.dataTables_filter {
+    margin-bottom: 15px; /* Add a bottom margin of 5px */
+}
+#commissionModal .modal-content, #deductionModal .modal-content ,#salariesModal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+#commissionModal .close-button, #deductionModal .close-button ,#salariesModal .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#commissionModal .close-button:hover, #deductionModal .close-button:hover, #salariesModal .close-button:hover,
+#commissionModal .close-button:focus ,#deductionModal .close-button:focus,#salariesModal .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.work-logs {
+
+    width: 310px;
+    height: 210px;
+    border-radius: 10px;
+    padding: 20px;
+    color: rgb(54, 54, 54);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.work-logs h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #888;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.work-logs p {
+
+  text-align: left;
+}
+.work-logs .work-time {
+  font-size: 2rem;
+  color: #27ae60;
+  margin-bottom: 5px;
+  text-align: left;
+  
+}
+.work-logs .clock-in-time, .work-logs .clock-out-time {
+  font-size: 0.9rem;
+  color: #888;
+}
+.work-logs .times {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.work-logs .clock-in-time span, .work-logs .clock-out-time span {
+  color: #333;
+}
+
+/*RATINGS EMPLOYEE*/
+
+#ratings {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 200px;
+height: 210px;
+margin: 20px auto;
+padding: 20px;
+
+
+
+}
+
+#ratings .rating-value {
+width:100%; 
+text-align: center;
+padding-right: 20px;
+
+
+}
+
+#ratings .rating-value h1 {
+font-size: 3rem;
+font-weight: bold;
+color: #333;
+margin-bottom: 10px;
+}
+
+#ratings .rating-value h1 span {
+font-size: 1.5rem;
+color: #666;
+}
+
+#ratings .stars {
+color: #FFD700;
+font-size: 1.5rem;
+margin-top: 5px;
+}
+
+#ratings .rating-value p {
+color: #d9534f;
+font-size: 1rem;
+margin-top: 5px;
+}
+
+ .card-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 60%;
+
+}
+
