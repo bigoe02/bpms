@@ -1,0 +1,23 @@
+
+<---RECAPTCHA google--->
+Label: La Julieta
+
+SITE KEY: 6LcBWIQqAAAAABiBHcUMVqDw1wvK4TJGLfOW-Bol
+SECRET KEY: 6LcBWIQqAAAAANVA4ss9o4fDhwnCmFy-FCJVdqBv
+
+<-----ip2location.io---->
+
+Account: rodriguezjanuah@gmail.com
+password:02...@@
+
+API Key: 7D80BC1D2DB3EABF3D90CCC212EC5A44
+IP Geolocation API Query:
+https://api.ip2location.io/?key=7D80BC1D2DB3EABF3D90CCC212EC5A44&ip=122.52.129.220
+
+<-------EMAIL.JS--->
+Account: rodriguezjanuah@gmail.com
+password:02...@@
+
+Service_ID: service_qoanxfx
+API Key: Pp90UCRf5XKeLWJRu
+Private Key: 1wY3ZAAGOvesXGklArdsX

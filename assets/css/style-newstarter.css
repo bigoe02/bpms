@@ -1,0 +1,957 @@
+/* BUFFER */
+:root {
+	--border-width: 7px;
+  }
+  
+
+
+.sec-loading {
+    position: fixed; /* Fixes the position to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the size of the element */
+	width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex; /* Enables flexbox for centering */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    z-index: 9999; /* Ensures it is on top of other elements */
+    color: white; /* Text color */
+    font-size: 24px; /* Font size */
+    border-radius: 8px; /* Optional: rounded corners */
+	overflow: hidden;
+	flex-direction: column;
+}
+
+.page-content {
+    position: relative; /* Allows the page content to scroll */
+    z-index: 1; /* Ensures page content is below the loading section */
+}
+  .sec-loading .one{
+	height: 80px;
+	width: 80px;
+	border: var(--border-width) solid white;
+	transform: rotate(45deg);
+	border-radius: 0 50% 50% 50%;
+	position: relative;
+	animation: move 0.5s linear infinite alternate-reverse;
+	background-color: #eb4a62;
+	margin-bottom: 10px;
+  }
+.loadingAnimation{
+    height: 80px;
+    width: 80px;
+    margin-top: 10px; /* Space between sec-loading and loading text */
+    text-align: center; /* Center the text */
+    font-size: 24px; /* Example font size */
+    color: #ffffff; /* Example text color */
+  }
+  .sec-loading .one::before ,.sec-loading .loadingAnimation ::before{
+	content: "";
+	position: absolute;
+	height: 55%;
+	width: 55%;
+	border-radius: 50%;
+	border: var(--border-width) solid transparent;
+	border-top-color: white;
+	border-bottom-color: white;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: rotate 1s linear infinite;
+  }
+  
+  @keyframes rotate {
+	to {
+	  transform: translate(-50%, -50%) rotate(360deg);
+	}
+  }
+  @keyframes move {
+	to {
+	  transform: translateY(15px) rotate(45deg);
+	}
+  }
+/* MODAL FOR CALENDARPREVIEW BACKGROUND */
+    /* Optional: Add custom styles to adjust modal and iframe appearance */
+    .calendarprev .modal-body{
+      display: flex;
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+
+  }
+  .calendarprev .left-modal {
+  position: absolute; /* Change from default */
+  left: 270px;
+top: 20px;
+  transform: translateY(-50%); /* Adjust to center vertically */
+  margin: 0; /* Remove margin */
+}
+  .calendarprev iframe {
+      max-width: 200%; /* Make sure the iframe doesn't exceed modal width */
+      max-height: 100%; /* Set a maximum height for the iframe */
+      border: none; /* Remove default iframe border */
+  }
+  /* NEON EFFECT FOR ABOUT US */
+
+  /* @import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap"); */
+
+  .hair-two-columns {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center the columns */
+}
+
+.hair-left {
+    flex: 0 0 50%; /* Each item takes up half the width */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    padding: 5px; /* Optional: Add some padding for spacing */
+    padding-top: 20px;
+  }
+#blink h5 {
+  font-size: calc(10px + 5vh);
+  line-height: calc(10px + 5vh);
+  /* text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  color: #fccaff; */
+  /* text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000; */
+    /* color: #fff6a9; */
+    font-family: "Open Sans", sans-serif;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+
+#blink .blink-waxing {
+  color: #fff6a9;
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  animation-delay: 0s;
+  animation-name: blink-waxing;
+
+}
+
+#blink .blink-facial {
+  color: #ffcccb;
+  text-shadow: 0 0 5px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff69b4, 0 0 40px #ff69b4, 0 0 60px #ff1493, 0 0 10px #ff69b4, 0 0 98px #ff1493;
+  animation-delay: 1s;
+  animation-name: blink-facial;
+}
+
+#blink .blink-hair-makeup {
+  color: #add8e6;
+  text-shadow: 0 0 5px #00bfff, 0 0 15px #00bfff, 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #1e90ff, 0 0 10px #00bfff, 0 0 98px #1e90ff;
+  animation-delay: 2s;
+  animation-name: blink-hair-makeup;
+}
+
+#blink .blink-massage {
+  color: #d8bfd8;
+  text-shadow: 0 0 5px #9370db, 0 0 15px #9370db, 0 0 20px #9370db, 0 0 40px #9370db, 0 0 60px #8a2be2, 0 0 10px #9370db, 0 0 98px #8a2be2;
+  animation-delay: 3s;
+  animation-name: blink-massage;
+}
+
+#blink .blink-manicure {
+  color: #ffb6c1;
+  text-shadow: 0 0 5px #ff1493, 0 0 15px #ff1493, 0 0 20px #ff1493, 0 0 40px #ff1493, 0 0 60px #db7093, 0 0 10px #ff1493, 0 0 98px #db7093;
+  animation-delay: 4s;
+  animation-name: blink-manicure;
+}
+
+#blink .blink-pedicure {
+  color: #90ee90;
+  text-shadow: 0 0 5px #32cd32, 0 0 15px #32cd32, 0 0 20px #32cd32, 0 0 40px #32cd32, 0 0 60px #228b22, 0 0 10px #32cd32, 0 0 98px #228b22;
+    animation-delay: 5s;
+  animation-name: blink-pedicure;
+}
+
+#blink .blink-hair-cut {
+  color: #ffdab9;
+  text-shadow: 0 0 5px #ff7f50, 0 0 15px #ff7f50, 0 0 20px #ff7f50, 0 0 40px #ff7f50, 0 0 60px #cd5c5c, 0 0 10px #ff7f50, 0 0 98px #cd5c5c;
+  animation-delay: 6s;
+  animation-name: blink-hair-cut;
+}
+
+#blink .blink-body-spa {
+  color: #f0e68c;
+  text-shadow: 0 0 5px #ffd700, 0 0 15px #ffd700, 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #b8860b, 0 0 10px #ffd700, 0 0 98px #b8860b;
+  animation-delay: 7s;
+  animation-name: blink-body-spa;
+}
+
+
+
+
+@keyframes blink-waxing {
+  20%, 24%, 55% {
+    color: #111;
+    text-shadow: none;
+  }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    color: #fff6a9;
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  }
+}
+
+@keyframes blink-facial {
+  20%, 24%, 55% {
+    color: #111;
+    text-shadow: none;
+  }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    color: #ffcccb;
+    text-shadow: 0 0 5px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff69b4, 0 0 40px #ff69b4, 0 0 60px #ff1493, 0 0 10px #ff69b4, 0 0 98px #ff1493;
+  }
+}
+
+@keyframes blink-hair-makeup {
+  20%, 24%, 55% {
+    color: #111;
+    text-shadow: none;
+  }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    color: #add8e6;
+    text-shadow: 0 0 5px #00bfff, 0 0 15px #00bfff, 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #1e90ff, 0 0 10px #00bfff, 0 0 98px #1e90ff;
+  }
+}
+
+@keyframes blink-massage {
+  20%, 24%, 55% {
+    color: #111;
+    text-shadow: none;
+  }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    color: #d8bfd8;
+    text-shadow: 0 0 5px #9370db, 0 0 15px #9370db, 0 0 20px #9370db, 0 0 40px #9370db, 0 0 60px #8a2be2, 0 0 10px #9370db, 0 0 98px #8a2be2;
+  }
+}
+
+@keyframes blink-manicure {
+  20%, 24%, 55% {
+    color: #111;
+    text-shadow: none;
+  }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    color: #ffb6c1;
+    text-shadow: 0 0 5px #ff1493, 0 0 15px #ff1493, 0 0 20px #ff1493, 0 0 40px #ff1493, 0 0 60px #db7093, 0 0 10px #ff1493, 0 0 98px #db7093;
+  }
+}
+
+@keyframes blink-pedicure {
+  20%,  24%, 55% {
+    color: #111;
+    text-shadow: none;
+  }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    color: #90ee90;
+    text-shadow: 0 0 5px #32cd32, 0 0 15px #32cd32, 0 0 20px #32cd32, 0 0 40px #32cd32, 0 0 60px #228b22, 0 0 10px #32cd32, 0 0 98px #228b22;
+  }
+}
+
+@keyframes blink-hair-cut {
+  20%, 24%, 55% {
+    color: #111;
+    text-shadow: none;
+  }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    color: #ffdab9;
+    text-shadow: 0 0 5px #ff7f50, 0 0 15px #ff7f50, 0 0 20px #ff7f50, 0 0 40px #ff7f50, 0 0 60px #cd5c5c, 0 0 10px #ff7f50, 0 0 98px #cd5c5c;
+  }
+}
+
+@keyframes blink-body-spa {
+  20%, 24%, 55% {
+    color: #111;
+    text-shadow: none;
+  }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    color: #f0e68c;
+    text-shadow: 0 0 5px #ffd700, 0 0 15px #ffd700, 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #b8860b, 0 0 10px #ffd700, 0 0 98px #b8860b;
+  }
+}
+/* ABOUT US FLIPCARD */
+
+/* @import url('https://fonts.googleapis.com/css?family=Lato'); */
+
+
+
+/* .flip-card-container */
+.flip-card-container {
+  --hue: 150;
+  --primary: hsl(var(--hue), 50%, 50%);
+  --white-1: hsl(0, 0%, 90%);
+  --white-2: hsl(0, 0%, 80%);
+  --dark: hsl(var(--hue), 25%, 10%);
+  --grey: hsl(0, 0%, 50%);
+
+  width: 500px;
+  height: 500px;
+
+
+  perspective: 1000px;
+}
+
+/* .flip-card */
+.flip-card {
+  width: inherit;
+  height: inherit;
+  
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .6s .1s;
+}
+
+/* hover and focus-within states */
+.flip-card-container:hover .flip-card,
+.flip-card-container:focus-within .flip-card {
+  transform: rotateY(180deg);
+}
+
+/* .card-... */
+.flip-card .card-front,
+.flip-card .card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+
+  background: var(--dark);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  backface-visibility: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .card-front */
+.flip-card  .card-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* .card-back */
+.flip-card  .card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+.flip-card  .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  margin-top: 20px; /* Optional: add some space above the content */
+}
+
+.flip-card .content-container button {
+  margin-bottom: 10px; /* Optional: space between button and list */
+}
+/* figure */
+.flip-card figure {
+  z-index: -1;
+}
+
+/* figure, .img-bg */
+.flip-card figure,
+.flip-card .img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* img */
+.flip-card img {
+  height: 100%;
+  border-radius: 24px;
+  width: 180%;
+}
+
+/* figcaption */
+.flip-card  figcaption {
+  display: block;
+justify-content: center;
+  width: auto;
+  margin-top: 12%;
+  padding: 8px 22px;
+
+  font-weight: bold;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  word-spacing: 6px;
+  text-align: center;
+    font-size: 50px;
+  position: absolute;
+  top: 10px;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+
+  background: linear-gradient(20deg, black, pink);
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; 
+}
+
+/* .img-bg */
+.flip-card  .img-bg {
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+.card-front .img-bg {
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+}
+
+.card-front .img-bg::before {
+  content: "";
+
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(18deg);
+
+  width: 100%;
+  height: 6px;
+  border: 1px solid var(--primary);
+  border-left-color: transparent;
+  border-right-color: transparent;
+
+  transition: .1s;
+}
+
+.flip-card .card-back .img-bg {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+}
+
+/* hover state */
+.flip-card-container:hover .card-front .img-bg::before {
+  width: 6px;
+  border-left-color: var(--primary);
+  border-right-color: var(--primary);
+}
+.flip-card .gradient-icon {
+  font-size: 48px; /* Adjust size as needed */
+  background: linear-gradient(20deg, white, pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* ul */
+.flip-card  ul {
+  margin: 0 auto;
+  width: 70%;
+  height: 100%;
+
+  list-style: none;
+  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* li */
+.flip-card  li {
+  width: 100%;
+  margin-top: 12px;
+  padding-bottom: 12px;
+
+  font-size: 14px;
+  text-align: center;
+
+  position: relative;
+  transition: text-shadow 0.3s ease; 
+}
+
+.flip-card  li:nth-child(2n) {
+  color: var(--white-2);
+}
+
+.flip-card  li:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: currentColor;
+  opacity: .2;
+}
+/* Apply text shadow on hover */
+.flip-card  li:hover {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Strong white text shadow on hover */
+}
+/* button */
+.flip-card  button {
+  font-family: inherit;
+  font-weight: bold;
+  color: black;
+
+  letter-spacing: 2px;
+
+  padding: 9px 20px;
+  border: 1px solid var(--grey);
+  border-radius: 1000px;
+  background: transparent;
+  transition: .3s;
+
+  cursor: pointer;
+}
+
+.flip-card button:hover,
+.flip-card button:focus {
+  color: var(--primary);
+  background: hsla(var(--hue), 25%, 10%, .2);
+  border-color: currentColor;
+}
+
+.flip-card button:active {
+  transform: translate(2px);
+}
+
+/* .design-container */
+.flip-card .design-container {
+  --tr: 90;
+  --op: .5;
+
+  width: 100%;
+  height: 100%;
+
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  pointer-events: none;
+}
+
+/* .design */
+.flip-card .design {
+  display: block;
+
+  background: var(--grey);
+  position: absolute;
+
+  opacity: var(--op);
+  transition: .3s;
+}
+
+.design--1,
+.design--2,
+.design--3,
+.design--4 {
+  width: 1px;
+  height: 100%;
+}
+
+.design--1,
+.design--2 {
+  top: 0;
+  transform: translateY(calc((var(--tr) - (var(--tr) * 2)) * 1%))
+}
+
+.design--1 {
+  left: 20%;
+}
+
+.design--2 {
+  left: 80%;
+}
+
+.design--3,
+.design--4 {
+  bottom: 0;
+  transform: translateY(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%))
+}
+
+.design--3 {
+  left: 24%;
+}
+
+.design--4 {
+  left: 76%;
+}
+
+.design--5,
+.design--6,
+.design--7,
+.design--8 {
+  width: 100%;
+  height: 1px;
+}
+
+.design--5,
+.design--6 {
+  left: 0;
+  transform: translateX(calc((var(--tr) - (var(--tr) * 2)) * 1%));
+}
+
+.design--5 {
+  top: 41%;
+}
+
+.design--6 {
+  top: 59%;
+}
+
+.design--7,
+.design--8 {
+  right: 0;
+  transform: translateX(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%))
+}
+
+.design--7 {
+  top: 44%;
+}
+
+.design--8 {
+  top: 56%;
+}
+
+/* states */
+button:hover+.design-container,
+button:active+.design-container,
+button:focus+.design-container {
+  --tr: 20;
+  --op: .7;
+}
+
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 100%, .6);
+  font-size: 16px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+/* CARDS FOR SERVICES */
+
+.accordian {
+	width: 805px; 
+  height: 350px;
+	overflow: hidden;
+	
+/*Time for some styling*/
+margin: 0 auto 100px; /* Remove top margin, keep horizontal margins, and bottom margin */
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+	width: 1200px;
+	/*This will give ample space to the last item to move
+	instead of falling down/flickering during hovers.*/
+}
+
+.accordian li {
+	position: relative;
+	display: block;
+	width: 160px;
+	float: left;
+	
+	border-left: 1px solid #888;
+	
+	box-shadow: 
+        0 0 10px 1px rgba(255, 192, 203, 0.5), /* Light pink */
+        0 0 20px 5px rgba(255, 105, 180, 0.5), /* Hot pink */
+        0 0 30px 10px rgba(255, 20, 147, 0.5); /* Deep pink */
+    
+    /*Transitions to give animation effect*/
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+	/*If you hover on the images now you should be able to 
+	see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements*/
+.accordian ul:hover li {width: 40px;}
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style*/
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+	display: block;
+	width: 500px;
+max-width: fit-content;
+  height: 350px;
+}
+
+/*Image title styles*/
+.accordian .image_title {
+	background: linear-gradient(to right, #FFE548, pink);
+	position: absolute;
+	left: 0; bottom: 0;	
+width: 500px;	
+
+}
+.accordian .image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	padding: 20px;
+	font-size: 30px;
+
+}
+
+
+.accordian  .count {
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    color: black; /* Text color */
+	font-size: 150px;
+    padding: 5px; /* Padding around the count */
+    border-radius: 5px; /* Rounded corners */
+	opacity: 1; /* Fully visible by default */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+.accordian .hide {
+    opacity: 0; /* Hidden state */
+}
+
+/* KEYBOARD */
+.keyboard {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  margin: 0 auto; /* Center the keyboard in the middle */
+}
+
+.keyboard .key {
+font-size: 9vw;
+display: inline-block;
+letter-spacing: -1vw;
+transition: transform 0.2s;
+/* background-color: #101013; */
+color: rgb(233, 233, 233);
+justify-content: center;
+align-items: center;
+
+font-family: "Poppins", sans-serif;
+font-weight: 900;
+}
+
+
+
+@keyframes pressDown1 {
+30%,
+40%,
+100% {
+  transform: translateY(0);
+}
+35% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown2 {
+70%,
+80%,
+100% {
+  transform: translateY(0);
+}
+75% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown3 {
+30%,
+40%,
+100% {
+  transform: translateY(0);
+}
+35% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown4 {
+40%,
+50%,
+100% {
+  transform: translateY(0);
+}
+45% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown5 {
+20%,
+30%,
+100% {
+  transform: translateY(0);
+}
+25% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown6 {
+60%,
+70%,
+100% {
+  transform: translateY(0);
+}
+65% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown7 {
+10%,
+20%,
+100% {
+  transform: translateY(0);
+}
+15% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown8 {
+35%,
+45%,
+100% {
+  transform: translateY(0);
+}
+40% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown9 {
+60%,
+70%,
+100% {
+  transform: translateY(0);
+}
+65% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown10 {
+30%,
+40%,
+100% {
+  transform: translateY(0);
+}
+35% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown01 {
+30%, 40%, 100% {
+  transform: translateY(0);
+}
+35% {
+  transform: translateY(10px);
+}
+}
+
+@keyframes pressDown02 {
+20%, 30%, 100% {
+  transform: translateY(0);
+}
+25% {
+  transform: translateY(10px);
+}
+}
+
+
+.keyboard .key:nth-child(1) {
+animation: pressDown1 2s infinite;
+}
+
+.keyboard .key:nth-child(2) {
+animation: pressDown2 3s infinite;
+}
+
+.keyboard .key:nth-child(3) {
+animation: pressDown3 4s infinite;
+}
+
+.keyboard .key:nth-child(4) {
+animation: pressDown4 2.5s infinite;
+}
+
+.keyboard .key:nth-child(5) {
+animation: pressDown5 2.5s infinite;
+}
+
+.keyboard .key:nth-child(6) {
+animation: pressDown6 3.5s infinite;
+}
+
+.keyboard .key:nth-child(7) {
+animation: pressDown7 2.2s infinite;
+}
+
+.keyboard .key:nth-child(8) {
+animation: pressDown8 3.2s infinite;
+}
+.keyboard .key:nth-child(9) {
+animation: pressDown9 1.2s infinite;
+}
+.keyboard .key:nth-child(10) {
+animation: pressDown10 2.0s infinite;
+}
+.keyboard .key:nth-child(13) { /* This is the 'C' key */
+animation: pressDown01 0.9s infinite;
+}
+
+.keyboard .key:nth-child(14) { /* This is the 'E' key */
+animation: pressDown02 2.5s infinite;
+}
+
+
+
+
+/* extra stuff */
+.keyboard .jux-linx {
+display: flex;
+flex-direction: row;
+align-items: center;
+flex-wrap: wrap;
+justify-content: flex-start;
+gap: 10px;
+position: absolute;
+left: 20px;
+bottom: 20px;
+}
+
+.keyboard a {
+text-decoration: none;
+font-family: "IBM Plex Sans", sans-serif;
+font-weight: 400;
+font-size: 16px;
+color: white;
+background-color: black;
+border: 1px solid rgba(255, 255, 255, 0.3);
+border-radius: 2px;
+padding: 5px 10px;
+transition: 0.1s all ease-in;
+}
+
+.keyboard a:nth-child(1):hover {
+border: 1px solid rgba(255, 255, 255, 0.4);
+box-shadow: 0px 2px 0 #349eff;
+}
+
+.keyboard a:nth-child(2):hover {
+border: 1px solid rgba(255, 255, 255, 0.4);
+box-shadow: 0px 2px 0 #ff5757;
+}

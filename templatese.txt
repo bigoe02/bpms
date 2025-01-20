@@ -1,0 +1,18 @@
+Dear {{username}},
+
+Thank you for choosing LA JULIETA BEAUTY CENTER- MUNTINLUPA  We’re pleased to confirm your booking details as follows:
+
+Booking Details:
+
+Service/Product: {{selectedServices}}
+Booking Date: {{adate}}
+Booking Time: {{atime}}
+
+Special Instructions:
+
+Please arrive 10 minutes early or "Bring your ID for verification.
+
+We look forward to serving you!
+
+Warm regards,
+LA JULIETA TEAM - MUNTINLUPA BRANCH
